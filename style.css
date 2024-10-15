@@ -1,0 +1,344 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400&display=swap');
+
+body {
+   
+    font-family: "Poppins", sans-serif;
+    overflow-x: hidden;
+    overflow-y: hidden;
+}
+
+.video-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1; /* Fica atrás do conteúdo */
+  overflow: hidden;
+}
+
+#bg-video {
+  position: absolute;
+  top: 50%;
+  left: 60%;
+  min-width: 130%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  transform: translate(-50%, -50%);
+  z-index: -1;
+  background-size: cover;
+  object-fit: cover;
+  transition: all 1s ease;
+}
+
+.model3d {
+    width: 500px;
+    max-width: 500px;
+ 
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(15%,-70%);
+ 
+}
+
+.info {
+    position: relative;
+    perspective: 2000px; /* Define a perspectiva 3D */
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    width: 100%;
+    height: 400px; /* Tamanho fixo para o efeito */
+}
+
+/* O quadrado básico */
+.info > .info-menu {
+    width: 500px;
+    height: 600px;
+    border: 1px solid rgb(51, 51, 119);
+    border-radius: 20px;
+    border-right:transparent;
+    color: white;
+    display: none; /* Inicialmente oculto */
+    background-color: rgba(0, 0, 0, 0.9);
+    padding: 30px;
+    position: absolute;
+    backface-visibility: hidden; /* Oculta o outro lado durante a rotação */
+    transform: rotateY(0deg); /* Posição inicial */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
+    overflow-y: scroll;
+    
+    scrollbar-color: #e0e0e0   rgb(51, 51, 119) ; 
+    transition: transform 1s ease, opacity 1s ease;
+    box-shadow: 
+        0 0 5px rgba(51, 51, 119, 0.8), 
+        0 0 10px rgba(51, 51, 119, 0.7), 
+        0 0 15px rgba(51, 51, 119, 0.5), 
+        0 0 20px rgba(51, 51, 119, 0.3); 
+}
+
+
+/* O quadrado ativo (o que está visível) */
+.info > .info-menu.active {
+    display: block; /* Exibe o conteúdo */
+    animation: appear 1s ease forwards;
+ 
+
+}
+
+.info .home h1 {
+  text-align: left;
+}
+
+.info .home .function {
+    position: absolute;
+    top: 75px;
+  
+}
+
+.info .home .detail {
+    margin-top: 50px;
+}
+
+.info .contact {
+  overflow-y: hidden;
+}
+
+@keyframes appear {
+    0% {
+        opacity: 0;
+        transform: rotateY(90deg) translateX(-100px) translateY(200px);
+    }
+    50% {
+        opacity: 0.5;
+        transform: rotateY(0deg)  translateX(-100px) translateY(200px);
+    }
+    100% {
+        opacity: 1;
+        transform: rotateY(0deg)  translateX(-100px) translateY(200px); /* Move para a direita */
+    }
+}
+
+.model3d model-viewer {
+    width: 400px;
+    height: 400px;
+    transition: all 2s ease;
+    background-color: transparent;
+    z-index: -1;
+  
+ 
+    
+    
+}
+.works {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+}
+
+.proj {
+  border: 1px rgb(51, 51, 119) solid;
+  width: 400px;
+  height: 400px;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+ position: relative;
+  cursor: pointer;
+  transition: transform .4s ease;
+ 
+}
+
+.proj h2 {
+  position: absolute;
+  top: 280px;
+  left: 20px;
+}
+
+.proj:hover {
+ transform: scale(1.03);
+}
+
+.proj .img {
+  width: 100%;
+ height: 300px;
+  overflow: hidden; /* Para esconder a parte que ultrapassar do contêiner */
+  border-radius: 20px 20px 0 0;
+}
+
+.proj img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Garante que a imagem preencha o contêiner sem distorcer */
+  object-position: center; /* Centraliza a imagem */
+}
+
+.model3d p {
+  position: absolute;
+  font-size: 1.6rem;
+  color: #fff;
+}
+
+.animation {
+    animation: side 0.9s ease-in-out forwards;
+  }
+  
+  
+  @keyframes side {
+    0% {
+      transform: translateX(0);
+     
+    }
+    50% {
+      transform: translateX(250%);
+      
+     
+    }
+  
+  
+   
+  
+    100% {
+      transform: translateX(0);
+     
+    }
+  }
+  
+
+  .menu {
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 10px 15px;
+    position: relative;
+    transition: color 0.3s ease; /* Transição suave da cor */
+}
+
+/* Estilo para o menu ativo */
+.menu.active-menu {
+    color: rgb(51, 51, 119);
+    
+
+}
+
+/* Pseudo-elemento para criar a borda "móvel" */
+.menu::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: rgb(51, 51, 119); /* Cor da borda animada */
+    transition: width 0.3s ease, left 0.3s ease; 
+    box-shadow: 0 0 20px rgba(51, 51, 119, 0.5); /* Transição suave de largura e posição */
+}
+
+/* Quando o menu está ativo, a borda aparece e ocupa toda a largura */
+.menu.active-menu::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Adiciona uma borda inferior ao passar o mouse (hover) */
+.menu:hover::after {
+    width: 100%;
+}
+  
+  .active-menu model-viewer {
+    animation: side 1s ease-in-out forwards;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    width: 700px;
+    margin: 0 auto;
+    margin-top: 30px;
+  
+  }
+  
+  @media (max-width: 768px) {
+    .header {
+      position: absolute;
+      left: 50%;
+      top: 1%;
+      transform: translateX(-50%);
+      z-index: 10000;
+
+    }
+
+    .model3d {
+        top: 60%;
+        transform: translateY(-60%);
+    }
+
+    .info {
+        padding: 10px;
+    }
+
+    .info-menu {
+      transform: rotateY(0deg);
+      left: 50%;
+      top: 120%;
+      z-index: -1;
+    }
+
+    .info > .info-menu {
+        padding: 20px 10px;
+    }
+
+    .proj {
+        max-width: 100%;
+        width: 100%;
+    }
+
+    .model3d model-viewer {
+        max-width: 100%;
+       
+    }
+
+    .works {
+        width: 100%;
+    }
+
+    @keyframes appear {
+      0% {
+          opacity: 0;
+          transform: rotateY(90deg) translate(-50%,-50%);
+      }
+      50% {
+          opacity: 0.5;
+          transform: rotateY(0deg)  translate(-50%,-50%);
+      }
+      100% {
+          opacity: 1;
+          transform: rotateY(0deg)  translate(-50%,-50%); /* Move para a direita */
+      }
+  }
+  
+}
+
+@media (max-width: 480px) {
+    .menu {
+        font-size: 0.9rem;
+    }
+
+    .model3d model-viewer {
+        height: 300px;
+    }
+
+    .proj h2 {
+        bottom: 10px;
+    }
+
+    .info-menu {
+      transform: rotateY(0deg)  translateX(-20%) translateY(200px)
+    }
+}
+  
