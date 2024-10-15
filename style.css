@@ -161,6 +161,7 @@ body {
   align-items: center;
   padding: 5px;
   overflow-x: scroll;
+  overflow-x: hidden;
 }
 
 .proj {
