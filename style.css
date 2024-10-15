@@ -344,7 +344,30 @@ body {
     }
 
     .model3d model-viewer {
-        height: 300px;
+        height: 200px;
+        left: -15%;
+        transform: translateY(-30%);
+       
+    }
+    @keyframes side {
+      0% {
+        transform: translateX(0) translateY(-30%);
+        
+       
+      }
+      50% {
+        transform: translateX(250%) translateY(-30%);
+        
+       
+      }
+    
+    
+     
+    
+      100% {
+        transform: translateX(0) translateY(-30%);
+       
+      }
     }
 
     .proj h2 {
@@ -352,7 +375,25 @@ body {
     }
 
     .info-menu {
-      transform: rotateY(0deg)  translateX(-20%) translateY(200px)
+      transform: rotateY(0deg)  translateX(-20%) translateY(200px);
+      max-width: 350px;
+      max-height: 500px;
     }
+
+    @keyframes appear {
+      0% {
+          opacity: 0;
+          transform: rotateY(90deg) translate(-50%,-50%);
+      }
+      50% {
+          opacity: 0.5;
+          transform: rotateY(0deg)  translate(-50%,-50%);
+      }
+      100% {
+          opacity: 1;
+          transform: rotateY(0deg)  translate(-50%,-50%); /* Move para a direita */
+      }
+  }
+  
 }
   
