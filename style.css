@@ -73,7 +73,7 @@ body {
     backface-visibility: hidden; /* Oculta o outro lado durante a rotação */
     transform: rotateY(0deg); /* Posição inicial */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
-    overflow-y: scroll;
+    overflow-y: auto;
     
     scrollbar-color: #e0e0e0   rgb(51, 51, 119) ; 
     transition: transform 1s ease, opacity 1s ease;
@@ -139,7 +139,9 @@ body {
 }
 .projects {
   position: relative; /* Para que os elementos filhos possam usar posições relativas ao contêiner */
-  overflow: hidden;
+  overflow-y: hidden;
+  overflow-x: hidden;
+
 }
 
 .projects h1 {
@@ -302,7 +304,7 @@ body {
 
     .model3d {
         top: 80%;
-        transform: translateY(-60%);
+        transform: translateY(-30%);
     }
 
     .info {
@@ -341,6 +343,7 @@ body {
 
     .works {
         width: 100%;
+        overflow-y: hidden;
     }
 
     @keyframes appear {
@@ -361,8 +364,12 @@ body {
   .model3d model-viewer {
     height: 300px;
     left: -5%;
-    transform: translateY(10%);
+  
    
+}
+
+.content {
+  padding: 20px;
 }
   
 }
@@ -404,7 +411,8 @@ body {
     }
 
     .info-menu {
-      transform: rotateY(0deg)  translateX(-20%) translateY(200px);
+      transform: rotateY(0deg)  translateX(-20%) translateY(10px);
+      top: 100%;
       max-width: 350px;
       max-height: 500px;
     }
