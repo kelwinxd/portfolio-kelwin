@@ -314,7 +314,7 @@ body {
     .info-menu {
       transform: rotateY(0deg);
       left: 50%;
-      top: 120%;
+      top: 110%;
       z-index: -1;
     }
 
@@ -362,7 +362,7 @@ body {
   }
 
   .model3d model-viewer {
-    height: 300px;
+    height: 250px;
     left: -5%;
   
    
