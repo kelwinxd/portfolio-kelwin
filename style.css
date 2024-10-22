@@ -9,6 +9,90 @@ body {
     
 }
 
+/*codigo modo dark*/
+.checkbox {
+  opacity: 0;
+  position: absolute;
+}
+
+.checkbox-label {
+  background-color: #111;
+  width: 50px;
+  height: 25px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.fa-moon {color: #f1c40f;}
+
+.fa-sun {color: #f39c12;}
+
+.checkbox-label .ball {
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  position: absolute;
+  left: 6px;
+  top:5px;
+  border-radius: 50%;
+  transition: transform 0.5s linear;
+}
+
+.checkbox:checked + .checkbox-label .ball {
+  transform: translateX(24px);
+}
+
+/*fim codigo*/
+
+
+
+.drop-config {
+  list-style: none;
+  border-radius: 10px;
+  padding: 20px 15px;
+  z-index: 7000;
+  position: absolute;
+  top: 50px;
+  right: 5px;
+  
+  background-color: rgba(34, 22, 105, 0.425);
+  display: none; /* Inicialmente oculto */
+}
+
+.drop-config.activeDrop {
+  display: flex;
+  flex-direction: column; /* Mostra quando a classe activeDrop está presente */
+}
+
+
+.arrows {
+  color: #fff;
+  position: absolute;
+  top: 40%;
+  z-index: 10000;
+  transform: translateY(-50%);
+  font-size: 30px;
+  cursor: pointer;
+  padding: 20px;
+}
+
+.arrows .left {
+position: absolute;
+top: 20%;
+left: -10%;
+
+}
+
+.arrows .right {
+position: absolute;
+top: 20%;
+right: -1180%;
+}
 .video-background {
 
   position: fixed;
@@ -44,7 +128,7 @@ body {
     position: absolute;
     left: 50%;
     top: 50%;
-    transform: translate(15%,-70%);
+    transform: translate(15%,10%);
  
 }
 
@@ -74,6 +158,7 @@ body {
     transform: rotateY(0deg); /* Posição inicial */
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3), 0 6px 20px rgba(0, 0, 0, 0.2);
     overflow-y: auto;
+  
     
     scrollbar-color: #e0e0e0   rgb(51, 51, 119) ; 
     transition: transform 1s ease, opacity 1s ease;
@@ -106,6 +191,24 @@ body {
 .info .home .detail {
     margin-top: 50px;
 }
+
+.info-menu .pro-title {
+  border: 1px solid rgb(51, 51, 119);
+  border-radius: 10px;
+  width: 250px;
+  text-align: right;
+  box-shadow: 
+  0 0 5px rgba(51, 51, 119, 0.3), 
+  0 0 10px rgba(51, 51, 119, 0.3), 
+  0 0 15px rgba(51, 51, 119, 0.3), 
+  0 0 20px rgba(51, 51, 119, 0.3); 
+
+  position: absolute;
+  left: -10%;
+  transform: translateX(-20%);
+  z-index: 60000;
+}
+
 
 .info .contact {
   overflow-y: hidden;
@@ -141,6 +244,7 @@ body {
   position: relative; /* Para que os elementos filhos possam usar posições relativas ao contêiner */
   overflow-y: hidden;
   overflow-x: hidden;
+  
 
 }
 
@@ -158,11 +262,16 @@ body {
   margin-top: 80px;
   display: flex;
   height: 400px;
+
   /*flex-direction:column*/
   gap: 40px;
   align-items: center;
   padding: 5px;
   overflow-x: scroll;
+ 
+ box-sizing: border-box;
+scroll-behavior: smooth;
+
 
 }
 
@@ -280,6 +389,16 @@ body {
   .active-menu model-viewer {
     animation: side 1s ease-in-out forwards;
   }
+
+  .config {
+    color: #fff;
+    position: absolute;
+    top: 44px;
+    right: 15%;
+    font-size: 20px;
+    z-index: 5000;
+    cursor: pointer;
+  }
   
   .header {
     display: flex;
@@ -290,6 +409,12 @@ body {
     margin: 0 auto;
     margin-top: 30px;
   
+  }
+
+  .header > div {
+    display: flex;
+    gap: 15px;
+    justify-self: center
   }
   
   @media (max-width: 768px) {
@@ -310,6 +435,15 @@ body {
     .info {
         padding: 10px;
     }
+
+    .config {
+      color: #fff;
+      position: absolute;
+      top: 15px;
+      right: 14%;
+      font-size: 20px;
+    }
+  
 
     .info-menu {
       transform: rotateY(0deg);
@@ -371,6 +505,15 @@ body {
 .content {
   padding: 20px;
 }
+
+.works {
+  position: absolute;
+  z-index: 5000;
+
+ top: 20px;
+ left: 50%;
+ transform: translateX(-50%);
+}
   
 }
 
@@ -379,6 +522,14 @@ body {
         font-size: 0.9rem;
     }
 
+    .config {
+      color: #fff;
+      position: absolute;
+      top: 10px;
+      right: 16%;
+      font-size: 20px;
+    }
+ 
     .model3d model-viewer {
         height: 200px;
         left: -15%;
@@ -406,9 +557,7 @@ body {
       }
     }
 
-    .proj h2 {
-        bottom: 10px;
-    }
+ 
 
     .info-menu {
       transform: rotateY(0deg)  translateX(-20%) translateY(10px);
@@ -431,6 +580,21 @@ body {
           transform: rotateY(0deg)  translate(-50%,-50%); /* Move para a direita */
       }
   }
+
+  .proj {
+    min-width: 300px;
+  height: 300px;
+  }
+
+  .proj h2 {
+   
+    top: 240px;
+    left: 20px;
+  }
   
+  .works {
+    top: -10px;
+  }
+
 }
   
