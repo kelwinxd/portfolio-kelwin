@@ -690,6 +690,7 @@ scroll-behavior: smooth;
       max-width: 350px;
       max-height: 500px;
       overflow-y: scroll;
+      scroll-behavior: auto;
     }
 
     @keyframes appear {
