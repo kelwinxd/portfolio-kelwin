@@ -131,3 +131,18 @@ function calcScroll() {
         console.error('Element .proj not found!');
     }
 }
+
+document.getElementById("checkbox").addEventListener("change", function() {
+    const videoSource = document.getElementById("bg-video").querySelector("source");
+
+    if (this.checked) {
+        videoSource.src = "./bglight.mp4"; // Caminho do vídeo para o modo "sun"
+        document.body.style.backgroundColor = '#c1764d'
+    } else {
+        videoSource.src = "./earth2.mp4"; // Caminho do vídeo para o modo "moon"
+        document.body.style.backgroundColor = 'black'
+
+    }
+    
+    document.getElementById("bg-video").load(); // Recarrega o vídeo com o novo src
+});

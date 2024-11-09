@@ -43,6 +43,12 @@ body {
   transition: transform 0.5s linear;
 }
 
+.home img {
+  max-width: 80%;
+  border-radius: 14px;
+  opacity: 0.7;
+}
+
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
@@ -59,15 +65,22 @@ body {
   position: absolute;
   top: 50px;
   right: 5px;
-  
+  text-decoration: none;
   background-color: rgba(34, 22, 105, 0.425);
   display: none; /* Inicialmente oculto */
 }
 
 .drop-config.activeDrop {
   display: flex;
+  gap: 10px;
   flex-direction: column; /* Mostra quando a classe activeDrop está presente */
 }
+
+.drop-config a {
+  text-decoration: none;
+  color: #fff;
+}
+
 
 
 .arrows {
@@ -140,6 +153,10 @@ right: -1180%;
     align-items: center;
     width: 100%;
     height: 400px; /* Tamanho fixo para o efeito */
+}
+
+.video {
+  width: 100%;
 }
 
 /* O quadrado básico */
@@ -295,6 +312,15 @@ scroll-behavior: smooth;
   top: 280px;
   left: 20px;
 }
+
+.proj h4 {
+  position: absolute;
+  top: 250px;
+  left: 20px;
+  color: rgb(117, 74, 156);
+}
+
+
 
 .proj:hover {
  transform: scale(1.03);
@@ -526,7 +552,7 @@ scroll-behavior: smooth;
       color: #fff;
       position: absolute;
       top: 10px;
-      right: 16%;
+      right: 27%;
       font-size: 20px;
     }
  
@@ -557,7 +583,12 @@ scroll-behavior: smooth;
       }
     }
 
- 
+
+    
+   .arrows .right {
+    right: -780%;
+  
+   }
 
     .info-menu {
       transform: rotateY(0deg)  translateX(-20%) translateY(10px);
@@ -596,5 +627,26 @@ scroll-behavior: smooth;
     top: -10px;
   }
 
+  .header {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    list-style: none;
+    width: 700px;
+    margin: 0 auto;
+    padding-right: 2rem;
+    margin-top: 30px;
+  
+  }
+
+}
+
+@media (max-width:400){
+  .info-menu {
+    transform: rotateY(0deg)  translateX(-20%) translateY(10px);
+    top: 100%;
+    max-width: 320px;
+    max-height: 300px;
+  }
 }
   
