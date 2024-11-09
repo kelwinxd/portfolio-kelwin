@@ -81,7 +81,7 @@ function calcScroll() {
 
     if (ProjOne) {
         const ProjWidth = ProjOne.offsetWidth;
-        let scrollAmount = ProjWidth + parseInt(window.getComputedStyle(ProjOne).marginRight); // Inclui a margem do gap
+        let scrollAmount = ProjWidth + parseInt(window.getComputedStyle(ProjOne).marginRight) + 30; // Inclui a margem do gap
 
         console.log('Project width:', ProjWidth);
 

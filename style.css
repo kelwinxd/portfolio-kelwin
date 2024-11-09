@@ -84,12 +84,13 @@ body {
 
 
 .arrows {
-  color: #fff;
+  color:rgb(96, 78, 196);
+  
   position: absolute;
   top: 40%;
   z-index: 10000;
   transform: translateY(-50%);
-  font-size: 30px;
+  font-size: 50px;
   cursor: pointer;
   padding: 20px;
 }
@@ -199,14 +200,10 @@ right: -1180%;
   text-align: left;
 }
 
-.info .home .function {
-    position: absolute;
-    top: 75px;
-  
-}
+
 
 .info .home .detail {
-    margin-top: 50px;
+    margin-top: 40px;
 }
 
 .info-menu .pro-title {
@@ -265,6 +262,47 @@ right: -1180%;
 
 }
 
+
+
+.viewall {
+  border: 1px solid rgb(51, 51, 119);
+  border-radius: 14px;
+  padding: 10px 5px;
+  width: 120px;
+  background: transparent;
+  color: #fff;
+  position: absolute;
+  bottom: 10px;
+  font-size: 18px;
+  cursor: pointer;
+
+}
+
+.viewall a {
+  text-decoration: none;
+  color: #fff;
+}
+
+.subtitle {
+  color:rgb(51, 51, 119) ;
+  width: 80%;
+ border-bottom: 1px solid rgb(51, 51, 119) ;
+}
+
+.skills {
+  display: flex;
+  gap: 20px;
+  width: 400px;
+  flex-wrap: wrap;
+}
+
+.skill {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  font-size: 24px;
+}
+
 .projects h1 {
   position: fixed; /* Fixa o elemento na viewport */
   top: 10px;      /* Distância do topo da janela */
@@ -290,6 +328,22 @@ right: -1180%;
 scroll-behavior: smooth;
 
 
+}
+
+.perfil {
+  display: flex;
+  gap: 20px;
+}
+
+.perfil img {
+  width: 200px;
+}
+
+.perfil-info {
+  display: flex;
+  flex-direction: column;
+  line-height: 0;
+  justify-content: center;
 }
 
 .proj {
@@ -548,12 +602,52 @@ scroll-behavior: smooth;
         font-size: 0.9rem;
     }
 
+    .perfil {
+      display: flex;
+     flex-direction: column;
+     align-items: center;
+     width: 100%;
+     text-align: center;
+     
+    }
+
+    .info .home .detail {
+      margin-top: 20px;
+  }
+  
+
+    .perfil h1 {
+      font-size: 24px;
+    }
+    
+    .perfil img {
+      width: 250px;
+    }
+    
+    .perfil-info {
+      display: flex;
+      flex-direction: column;
+      line-height: 0;
+      justify-content: center;
+      flex-wrap: wrap;
+      
+    }
+
     .config {
       color: #fff;
       position: absolute;
       top: 10px;
       right: 27%;
       font-size: 20px;
+    }
+
+    .skills {
+      width: 300px;
+    }
+
+    .skill {
+      font-size: 20px;
+     
     }
  
     .model3d model-viewer {
@@ -595,6 +689,7 @@ scroll-behavior: smooth;
       top: 100%;
       max-width: 350px;
       max-height: 500px;
+      overflow-y: scroll;
     }
 
     @keyframes appear {
