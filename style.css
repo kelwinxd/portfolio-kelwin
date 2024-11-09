@@ -614,12 +614,12 @@ scroll-behavior: smooth;
 
   .proj {
     min-width: 300px;
-  height: 300px;
+  height: 350px;
   }
 
   .proj h2 {
    
-    top: 240px;
+    top: 280px;
     left: 20px;
   }
   
