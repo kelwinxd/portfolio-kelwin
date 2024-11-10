@@ -64,12 +64,24 @@
     });
 
    
-
-const DropConfig = document.querySelector('.drop-config')
-Config.addEventListener('click', () => {
-    DropConfig.classList.toggle('activeDrop')
-     console.log('clicou')
- })
+    const config = document.querySelector('.config');
+    const DropConfig = document.querySelector('.drop-config');
+    
+    config.addEventListener('click', (event) => {
+        DropConfig.classList.toggle('activeDrop');
+        console.log('clicou');
+        
+        // Impede que o clique no Config feche o dropdown imediatamente
+        event.stopPropagation();
+    });
+    
+    // Evento para fechar o dropdown ao clicar fora
+    document.addEventListener('click', (event) => {
+        // Verifica se o clique foi fora do Config e do DropConfig
+        if (!config.contains(event.target) && !DropConfig.contains(event.target)) {
+            DropConfig.classList.remove('activeDrop');
+        }
+    });
 
 
 // Função para calcular o scroll
@@ -136,11 +148,25 @@ document.getElementById("checkbox").addEventListener("change", function() {
     const videoSource = document.getElementById("bg-video").querySelector("source");
 
     if (this.checked) {
-        videoSource.src = "./bglight.mp4"; // Caminho do vídeo para o modo "sun"
+        videoSource.src = "./bglight.mp4"; 
         document.body.style.backgroundColor = '#c1764d'
+        const allMenu = document.querySelectorAll('.info-menu')
+        allMenu.forEach((i) => {
+            i.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'
+            i.style.color = 'black'
+        })
+        console.log(allMenu)
+
     } else {
         videoSource.src = "./earth2.mp4"; // Caminho do vídeo para o modo "moon"
         document.body.style.backgroundColor = 'black'
+        const allMenu = document.querySelectorAll('.info-menu')
+         allMenu.forEach((i) => {
+            i.style.backgroundColor = 'rgba(0, 0, 0, 0.9)'
+            i.style.color = '#fff'
+        })
+       
+
 
     }
     
