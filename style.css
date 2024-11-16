@@ -206,7 +206,7 @@ right: -1180%;
     margin-top: 40px;
 }
 
-.info-menu .pro-title {
+ .pro-title {
   border: 1px solid rgb(51, 51, 119);
   border-radius: 10px;
   width: 250px;
@@ -218,9 +218,12 @@ right: -1180%;
   0 0 20px rgba(51, 51, 119, 0.3); 
 
   position: absolute;
-  left: -10%;
+  left: 30%;
+  top: 20%;
   transform: translateX(-20%);
   z-index: 60000;
+  color: #fff;
+  background-color: #000;
 }
 
 
