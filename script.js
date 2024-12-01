@@ -155,6 +155,7 @@ document.getElementById("checkbox").addEventListener("change", function() {
             i.style.backgroundColor = 'rgba(255, 255, 255, 0.8)'
             i.style.color = 'black'
         })
+        document.querySelector('.proj h4').style.color = '#fff'
         console.log(allMenu)
 
     } else {
@@ -166,8 +167,9 @@ document.getElementById("checkbox").addEventListener("change", function() {
             i.style.color = '#fff'
         })
        
+        document.querySelector('.proj h4').style.color = 'rgb(117, 74, 156)'
 
-
+       
     }
     
     document.getElementById("bg-video").load(); // Recarrega o vídeo com o novo src
