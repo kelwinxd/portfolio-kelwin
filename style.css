@@ -399,6 +399,11 @@ scroll-behavior: smooth;
   color: rgb(117, 74, 156);
 }
 
+.proj .animal {
+  width: 500px;
+
+}
+
 
 
 .proj:hover {
