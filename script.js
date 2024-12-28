@@ -144,6 +144,23 @@ function calcScroll() {
     }
 }
 
+document.getElementById('checkbox2').addEventListener("change", function() {
+    if(this.checked){
+        document.querySelector('.pt').style.color = "#fff"
+        document.querySelector('.eng').style.color = "black"
+          document.querySelector('.detail').textContent = 'I am a Full Stack Developer in a career transition, with more than a year of experience creating efficient and innovative solutions, using technologies such as JavaScript, TypeScript, React.js and Node.js. I also work as a volunteer on front end projects, always seeking to deliver impactful results.'
+         
+
+    } else {
+         document.querySelector('.pt').style.color = "black"
+         document.querySelector('.eng').style.color = "#fff"
+         document.querySelector('.detail').textContent = 'Sou um Full Stack Developer em transição de carreira, com mais de um ano de experiência criando soluções eficientes e inovadoras, utilizando tecnologias como JavaScript, TypeScript, React.js e Node.js. Também atuo como voluntário em projetos front end, sempre buscando entregar resultados impactantes.'
+       
+
+    }
+
+})
+
 document.getElementById("checkbox").addEventListener("change", function() {
     const videoSource = document.getElementById("bg-video").querySelector("source");
 

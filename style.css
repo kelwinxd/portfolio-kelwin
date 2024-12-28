@@ -15,6 +15,11 @@ body {
   position: absolute;
 }
 
+.checkbox2 {
+  opacity: 0;
+  position: absolute;
+}
+
 .checkbox-label {
   background-color: #111;
   width: 50px;
@@ -26,6 +31,29 @@ body {
   display: flex;
   justify-content: space-between;
   align-items: center;
+}
+
+.checkbox-lang {
+  background-color: #111;
+  width: 90px;
+  height: 25px;
+  border-radius: 50px;
+  position: relative;
+  padding: 5px;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-evenly;
+  gap: 10px;
+  align-items: center;
+}
+
+.pt {
+z-index: 1000;
+color: black;
+}
+
+.eng {
+  z-index: 1000;
 }
 
 .fa-moon {color: #f1c40f;}
@@ -43,6 +71,18 @@ body {
   transition: transform 0.5s linear;
 }
 
+.checkbox-lang .ball {
+  background-color: #fff;
+  width: 45px;
+  height: 25px;
+  position: absolute;
+  left: 8px;
+  top:5px;
+  border-radius: 50%;
+  transition: transform 0.5s linear;
+  opacity: 0.6;
+}
+
 .home img {
   max-width: 80%;
   border-radius: 14px;
@@ -52,6 +92,12 @@ body {
 .checkbox:checked + .checkbox-label .ball {
   transform: translateX(24px);
 }
+
+.checkbox2:checked + .checkbox-lang .ball {
+  transform: translateX(37px);
+}
+
+
 
 /*fim codigo*/
 
@@ -224,6 +270,7 @@ right: -1180%;
   z-index: 60000;
   color: #fff;
   background-color: #000;
+  z-index: 50000;
 }
 
 .contact .content h1 {
@@ -382,7 +429,8 @@ scroll-behavior: smooth;
  position: relative;
   cursor: pointer;
   transition: transform .4s ease;
-  background-color:rgba(51, 51, 119, 0.7)
+  background-color:rgba(51, 51, 119, 0.7);
+  z-index:2;
  
 }
 
@@ -422,6 +470,10 @@ scroll-behavior: smooth;
   height: 100%;
   object-fit: cover; /* Garante que a imagem preencha o contêiner sem distorcer */
   object-position: center; /* Centraliza a imagem */
+}
+
+.dash {
+  width: 150%;
 }
 
 .model3d p {
